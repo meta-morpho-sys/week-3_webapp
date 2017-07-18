@@ -2,9 +2,8 @@ require 'sinatra'
 set :session_secret, 'super secret'
 
 get '/' do
-  "<p style='border: 3px dotted green;
-              border-radius: 15px'>
-              Hello, Alan! This is for you</p>"
+  code = "<%= Time.now %>"
+  erb code
 end
 
 get '/Alan' do
@@ -16,10 +15,5 @@ get '/Yuliya' do
 end
 
 get '/cat' do
-  "<div>
-    <img
-    style='border: 10px dotted blue;
-                border-radius: 15px'
-    src='http://bit.ly/1eze8aE'/>
-  </div>"
+  erb(:index)
 end
