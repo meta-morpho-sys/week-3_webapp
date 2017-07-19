@@ -1,7 +1,21 @@
-<h1>My name is <%= @name %></h1>
-<h2>I am a sweet little kitty</h2>
+<h1>
+  <% if @name  %>
+    My name is <%= @name %>
+  <% end %>
+</h1>
+<form action="/named-cat">
+  <label for="name">Chose a name for your Kitty:</label>
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+</form>
 
-  <div>
+<h2>
+  <% if @age %>
+    I am a sweet little kitty of <%= @age %>
+  <% end %>
+</h2>
+
+<div>
   <img
   style='border: 5px dotted blue;
               border-radius: 50px'
